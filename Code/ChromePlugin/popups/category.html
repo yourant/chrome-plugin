@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>分类设置</title>
+  <link rel="stylesheet" href="../assets/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body style="width: 360px;">
+<div class="header-box">
+  <img src="../assets/images/logo.png" alt="logo" class="logo">
+  <div class="right-box">
+    <span class="top-account"></span>
+    &nbsp;
+    <span style="color: #0000ff;cursor: pointer" class="top-logout-btn">退出</span>
+  </div>
+</div>
+<div class="content-box">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-xs-10 control-label">Show Shipping Info</label>
+      <div class="col-xs-2">
+        <div class="slider show_shipping" disabled>
+          <div class="slider-content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="show-shipping-area">
+      <div class="form-group">
+        <label class="col-xs-5 control-label">Option</label>
+        <div class="col-xs-7">
+          <select class="form-control" id="option">
+            <option value="0">AliExpress Standard Shipping</option>
+            <option value="1">China Post Registered Air Mail</option>
+            <option value="2">EMS</option>
+            <option value="3">ePacket</option>
+            <option value="4">DHL</option>
+            <option value="5">FedEx</option>
+            <option value="6">Singapore Post</option>
+            <option value="7">TNT</option>
+            <option value="8">UPS</option>
+            <option value="9">USPS</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-5 control-label">Country</label>
+        <div class="col-xs-7">
+          <select class="form-control" id="country">
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-5 control-label">Currency</label>
+        <div class="col-xs-7">
+          <select class="form-control" id='currency'>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <label class="col-xs-10 control-label">Hide items without this option</label>
+        <div class="col-xs-2">
+          <div class="slider hide-item">
+            <div class="slider-content"></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <label class="col-xs-10 control-label">Show Processing Time</label>
+        <div class="col-xs-2">
+          <div class="slider show_processing" disabled>
+            <div class="slider-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-12">
+        <button id="saveSetting" class="btn btn-primary btn-block">更新设置</button>
+      </div>
+    </div>
+  </form>
+  <p>
+    <a href="http://xian.suntekcorps.com:8825/help/spider/" class="link" target="_blank">Need help with the plugin?</a>
+  </p>
+
+</div>
+<script src="../assets/lib/jquery.min.js"></script>
+<script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../script/popups/category.js"></script>
+</body>
+
+</html>
+<script src="../script/popups/login.js"></script>

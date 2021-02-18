@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>竞品采集插件 Help</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Microsoft YaHei', Arial, sans-serif, SimSun;
+    }
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      margin: 40px;
+    }
+
+    .content-box {
+      width: 1280px;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #333333;
+      line-height: 36px;
+    }
+
+    .content-box label {
+      display: block;
+      font-weight: 600;
+    }
+
+    .content-box span {
+      display: block;
+      font-size: 16px;
+      color: red;
+    }
+
+    .content-box img {
+      width: auto;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="title">SpiderSystem-ChromePlugin 竞品采集插件操作说明
+  <br>
+  <a href="javascript:;" id="downloadZip" style="font-size:16px">下载最新版本</a></div>
+<div class="content-box">
+  <label>第一步：安装插件</label>
+  <p>打开chrome浏览器的扩展程序管理页面（<u style="color: red;">chrome://extensions/</u>），打开开发者模式，将插件的zip包拖入安装（<u style="color: red;">注意确认版本号，删除上个版本</u>），详见下图：</p>
+  <img src="images/help001.png" alt="help">
+  <label>第二步：插件登录（<u style="color: red;">使用自己权限系统账号</u>）</label>
+  <img src="images/help002.png" alt="help">
+  <label>第三步：进入相应平台</label>
+  <p>打开浏览器上方的插件按钮，选择要采集的平台进入：（<u style="color: red;">Wish平台需要平台登录后才能进入页面</u>）</p>
+  <img src="images/help003.png" alt="help">
+  <label>第四步：开始采集数据</label>
+  <p>进入平台后，查找自己需要采集的产品，进入详细页面，插件图标会高亮显示，此时表示此页面可以采集数据。可点击页面右上角的’SFC‘按钮，页面会进入采集中的提示遮罩（<u style="color: red;">会有相关的验证提示，详见下图a、b</u>），等待直到完成采集，提示弹窗保存成功（<u style="color: red;">如有提示无法采集等错误，直接联系开发处理</u>）。</p>
+  <p>a、采集时提示选择关联id操作</p>
+  <img src="images/help004.png" alt="help">
+  <p>b、采集时验证当前版本是否最新</p>
+  <span>***提示版本过期时，请确认进入help页面，下载最新版本，重新安装使用***</span>
+  <img src="images/help006.png" alt="help">
+  <p>c、采集时验证当前插件登录情况</p>
+  <span>***提示登录校验失败，1：未登录，请使用权限系统的账号登录使用***</span>
+  <span>***提示登录校验失败，2：登录账号过期，请退出登录后重新登录即可使用***</span>
+  <img src="images/help005.png" alt="help">
+  <label>第五步：查看完整操作视频</label>
+  <p></p>
+  <img src="images/help.gif" alt="help">
+</div>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#downloadZip').on('click', function() {
+      $.ajax({
+        url: 'http://xian.suntekcorps.com:8824/Version/LatestVersion?project=spidersystem-chromeplugin',
+        method: 'GET',
+        timeout: 60000,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).done((res) => {
+        if (res.data && res.data.data) {
+          window.open(res.data.data.attachment_url)
+          return
+        }
+        alert('下载失败')
+      }).fail((err) => {
+        alert('下载失败')
+      })
+    })
+  })
+</script>
+</body>
+</html>

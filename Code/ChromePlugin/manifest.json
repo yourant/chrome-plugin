@@ -1,0 +1,1064 @@
+{
+  "name": "竞品采集系统插件",
+  "description": "此插件为产品数据采集插件，支持eBay、Amazon、Wish、Shopee、Rakuten、Kr11street 产品数据采集及存储。",
+  "version": "0.3.3",
+  "manifest_version": 2,
+  "minimum_chrome_version": "49.0.0.0",
+  "browser_action": {
+    "default_icon": "assets/images/icon_default_gray.png",
+    "default_title": "竞品采集系统插件",
+    "default_popup": "popups/default.html"
+  },
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "bookmarks",
+    "webRequest",
+    "storage",
+    "contextMenus",
+    "tabs",
+    "history",
+    "activeTab",
+    "http://xian.suntekcorps.com/",
+    "cookies",
+    "http://account.suntekcorps.com:8080/",
+    "storage"
+  ],
+  "icons": {
+    "48": "assets/images/icon_default.png"
+  },
+  "background": {
+    "scripts": [
+      "assets/lib/jquery.min.js",
+      "background/background.js",
+      "background/contextMenu/ebay.js",
+      "background/contextMenu/amazon.js",
+      "background/contextMenu/aliexpress.js",
+      "background/contextMenu/lazada.js",
+      "background/contextMenu/kr11street.js",
+      "background/contextMenu/coupang.js",
+      "background/contextMenu/shopee.js",
+      "background/contextMenu/rakuten.js",
+      "background/contextMenu/yahoo.js",
+      "background/contextMenu/joom.js",
+      "background/contextMenu/wish.js",
+      "background/createTab.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.ebay.com/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.us.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://store.shopping.yahoo.co.jp/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/yahoo/detail.jp.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://istore.szecommerce.com/yahoo/product*"
+      ],
+      "css": [],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rightClick.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopping.yahoo.co.jp/search?p=*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/yahoo/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://paypaymall.yahoo.co.jp/store/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/yahoo/detail.jp.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.joom.com/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/joom/logic.js",
+        "script/content/joom/detail.ru.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.joom.com/search/q.*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://istore.szecommerce.com/joom/productmanage*"
+      ],
+      "css": [],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rightClick.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*/sch*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*.aliexpress.com/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/aliexpress/logic.js",
+        "script/content/aliexpress/detail.us.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.com.my/catalog/?q=*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*/s?k*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://globalsearch.11st.co.kr/SearchPrdEnAction.tmall?method=getTotalSearchSeller*",
+        "http://global.11st.co.kr/glb/product/SellerProductDetail.tmall?*",
+        "http://search.11st.co.kr/Search.tmall?kwd=*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*/search?keyword=*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://search.rakuten.co.jp/search/mall/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rakuten/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.fr/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.fr.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.co.uk/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.uk.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.de/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.de.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.com.au/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.au.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.es/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.es.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.ca/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.ca.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.it/itm*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/logic.js",
+        "script/content/ebay/pureLogic.js",
+        "script/content/ebay/detail.it.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://vi.vipr.ebaydesc.com/ws/eBayISAPI.dll?ViewItemDescV4*"
+      ],
+      "all_frames": true,
+      "js": [
+        "script/content/ebay/detail.iframe.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.ebay.com/p/*?iid=*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/ebay/detail.click.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.ae/*",
+        "https://www.amazon.ae/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.ae.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.com.au/*",
+        "https://www.amazon.com.au/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic_en.js",
+        "script/content/amazon/detail.au.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.com.br/*",
+        "https://www.amazon.com.br/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.br.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.ca/*",
+        "https://www.amazon.ca/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.ca.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.de/*",
+        "https://www.amazon.de/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.de.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.es/*",
+        "https://www.amazon.es/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.es.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.fr/*",
+        "https://www.amazon.fr/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.fr.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.it/*",
+        "https://www.amazon.it/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.it.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.co.jp/*",
+        "https://www.amazon.co.jp/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.jp.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.com.mx/*",
+        "https://www.amazon.com.mx/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.mx.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.nl/*",
+        "https://www.amazon.nl/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.nl.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.sg/*",
+        "https://www.amazon.sg/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic.js",
+        "script/content/amazon/detail.sg.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.co.uk/*",
+        "https://www.amazon.co.uk/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic_en.js",
+        "script/content/amazon/detail.uk.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.amazon.com/*",
+        "https://www.amazon.com/-/zh/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/amazon/logic_en.js",
+        "script/content/amazon/detail.us.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.com.my/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/lazada/logic.js",
+        "script/content/lazada/detail.my.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.co.th/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/lazada/logic.js",
+        "script/content/lazada/detail.th.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.com.ph/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/lazada/logic.js",
+        "script/content/lazada/detail.ph.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.sg/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/lazada/logic.js",
+        "script/content/lazada/detail.sg.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.co.id/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/lazada/logic.js",
+        "script/content/lazada/detail.id.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.lazada.vn/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/lazada/logic.js",
+        "script/content/lazada/detail.vn.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.wish.com/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/wish/detail.us.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://ebay.szecommerce.com/*"
+      ],
+      "css": [],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rightClick.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://ad.szecommerce.com/*"
+      ],
+      "css": [],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rightClick.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://istore.szecommerce.com/*",
+        "http://dev.istore2.com/*"
+      ],
+      "css": [],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rightClick.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.coupang.com/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/coupang/detail.kr.js",
+        "script/content/coupang/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.com.br/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.br.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.co.id/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.id.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.com.my/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.my.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.ph/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.ph.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.sg/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.sg.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.co.th/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.th.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.tw/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.tw.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://shopee.vn/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/shopee/logic.js",
+        "script/content/shopee/detail.vn.js",
+        "script/content/shopee/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://*.11st.co.kr/products/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/krstreet/logic.js",
+        "script/content/krstreet/detail.kr.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://search.11st.co.kr/Search.tmall*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/krstreet/search.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://browse.gmarket.co.kr/search*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://*.11st.co.kr/products/*/viewDesc",
+        "http://*.11st.co.kr/products/*?method=getSellerProductSmartOtionDetailViewDesc&finalDscPrc=*"
+      ],
+      "all_frames": true,
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/krstreet/detail.iframe.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://item.rakuten.co.jp/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/rakuten/logic.js",
+        "script/content/rakuten/detail.jp.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.rakuten.ne.jp/gold/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "script/content/rakuten/detail.iframe.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://item.gmarket.co.kr/*"
+      ],
+      "css": [
+        "assets/css/content.css",
+        "assets/css/checkTab.css"
+      ],
+      "js": [
+        "assets/lib/jquery.min.js",
+        "script/content/common.js",
+        "script/content/gmarket/logic.js",
+        "script/content/gmarket/detail.kr.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://item.gmarket.co.kr/Item/ItemDetail?*"
+      ],
+      "all_frames": true,
+      "js": [
+        "script/content/gmarket/detail.iframe.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "assets/*"
+  ],
+  "homepage_url": "http://account.suntekcorps.com:8080/"
+}

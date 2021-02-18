@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src * 'unsafe-inline'">
+  <title>Title</title>
+  <link rel="stylesheet" href="../assets/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/lib/jquery.min.js"></script>
+  <script src="../assets/lib/default.js"></script>
+</head>
+
+<body>
+  <div class="header-box">
+    <img src="../assets/images/logo.png" alt="logo" class="logo">
+    <div class="right-box">
+      <span class="top-account"></span>
+      &nbsp;
+      <span style="color: #0000ff;cursor: pointer" class="top-logout-btn">退出</span>
+    </div>
+  </div>
+  <div class="content-box">
+    <p>You can start using the extension when you browse categories or search for products under these stores.</p>
+    <div class="row btn-box">
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="eabyclick" index="0">eBay</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="Amazonclick" index="1">Amazon</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="Wishclick" index="2">Wish</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="aliexpressClick"
+          index="3">Aliexpress</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="lazada" index="4">Lazada</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="shopee" index="5">Shopee</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="rakuten" index="6">Rakuten</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="kr11street"
+          index="7">Kr11street</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="gmarket" index="8">Gmarket</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="yahoo" index="9">Yahoo</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="joom" index="10">Joom</button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" style="outline:none;" class="btn btn-warning" id="coupang" index="11">Coupang</button>
+      </div>
+    </div>
+    <!-- eBay -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.ebay.com.au/" target="_blank" class="btn btn-danger">eBay.au</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.ca/" target="_blank" class="btn btn-danger">eBay.ca</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.de/" target="_blank" class="btn btn-danger">eBay.de</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.es/" target="_blank" class="btn btn-danger">eBay.es</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.fr/" target="_blank" class="btn btn-danger">eBay.fr</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.it/" target="_blank" class="btn btn-danger">eBay.it</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.co.uk/" target="_blank" class="btn btn-danger">eBay.uk</a></div>
+      <div class="col-xs-6"><a href="https://www.ebay.com/" target="_blank" class="btn btn-danger">eBay.us</a></div>
+    </div>
+    <!-- Amazon -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.amazon.com/" target="_blank" class="btn btn-danger">Amazon.us</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.co.uk/" target="_blank" class="btn btn-danger">Amazon.uk</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.ca/" target="_blank" class="btn btn-danger">Amazon.ca</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.com.au/" target="_blank" class="btn btn-danger">Amazon.au</a></div>
+      <div class="col-xs-6"><a href="https://www.Amazon.co.jp/" target="_blank" class="btn btn-danger">Amazon.jp</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.de/" target="_blank" class="btn btn-danger">Amazon.de</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.fr/" target="_blank" class="btn btn-danger">Amazon.fr</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.it/" target="_blank" class="btn btn-danger">Amazon.it</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.es/" target="_blank" class="btn btn-danger">Amazon.es</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.ae/" target="_blank" class="btn btn-danger">Amazon.ae</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.com.br/" target="_blank" class="btn btn-danger">Amazon.br</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.com.mx/" target="_blank" class="btn btn-danger">Amazon.mx</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.nl/" target="_blank" class="btn btn-danger">Amazon.nl</a></div>
+      <div class="col-xs-6"><a href="https://www.amazon.sg/" target="_blank" class="btn btn-danger">Amazon.sg</a></div>
+    </div>
+    <!-- Wish -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.wish.com/" target="_blank" class="btn btn-danger">Wish</a></div>
+    </div>
+    <!-- aliexpress -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.aliexpress.com/" target="_blank" class="btn btn-danger">Aliexpress</a>
+      </div>
+    </div>
+    <!-- lazada -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.lazada.com.my/" target="_blank"
+          class="btn btn-danger">lazada.com.my</a></div>
+      <div class="col-xs-6"><a href="https://www.lazada.co.th/" target="_blank" class="btn btn-danger">lazada.co.th</a>
+      </div>
+      <div class="col-xs-6"><a href="https://www.lazada.com.ph/" target="_blank"
+          class="btn btn-danger">lazada.com.ph</a></div>
+      <div class="col-xs-6"><a href="https://www.lazada.sg/" target="_blank" class="btn btn-danger">lazada.sg</a></div>
+      <div class="col-xs-6"><a href="https://www.lazada.co.id/" target="_blank" class="btn btn-danger">lazada.co.id</a>
+      </div>
+      <div class="col-xs-6"><a href="https://www.lazada.vn/" target="_blank" class="btn btn-danger">lazada.vn</a></div>
+    </div>
+    <!-- shopee -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://shopee.com.br/" target="_blank" class="btn btn-danger">Shopee.br</a></div>
+      <div class="col-xs-6"><a href="https://shopee.co.id/" target="_blank" class="btn btn-danger">Shopee.id</a></div>
+      <div class="col-xs-6"><a href="https://shopee.com.my/" target="_blank" class="btn btn-danger">Shopee.my</a></div>
+      <div class="col-xs-6"><a href="https://shopee.ph/" target="_blank" class="btn btn-danger">Shopee.ph</a></div>
+      <div class="col-xs-6"><a href="https://shopee.sg/" target="_blank" class="btn btn-danger">Shopee.sg</a></div>
+      <div class="col-xs-6"><a href="https://shopee.co.th/" target="_blank" class="btn btn-danger">Shopee.th</a></div>
+      <div class="col-xs-6"><a href="http://shopee.tw/" target="_blank" class="btn btn-danger">Shopee.tw</a></div>
+      <div class="col-xs-6"><a href="https://shopee.vn/" target="_blank" class="btn btn-danger">Shopee.vn</a></div>
+    </div>
+    <!-- rakuten -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.rakuten.co.jp" target="_blank" class="btn btn-danger">Rakuten</a></div>
+    </div>
+    <!-- kr11street -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.11st.co.kr/html/main.html" target="_blank"
+          class="btn btn-danger">Kr11street</a>
+      </div>
+    </div>
+    <!-- gmarket -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.gmarket.co.kr/" target="_blank" class="btn btn-danger">Gmarket</a>
+      </div>
+    </div>
+    <!-- yahoo -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://shopping.yahoo.co.jp/" target="_blank" class="btn btn-danger">Yahoo</a>
+      </div>
+    </div>
+    <!-- joom -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.joom.com/en/" target="_blank" class="btn btn-danger">Joom</a>
+      </div>
+    </div>
+    <!-- coupang -->
+    <div class="row item-box" style="display: none;">
+      <div class="col-xs-6"><a href="https://www.coupang.com/" target="_blank" class="btn btn-danger">Coupang</a>
+      </div>
+    </div>
+
+
+    <a href="http://xian.suntekcorps.com:8825/help/spider/" class="btn btn-link" target="_blank">Need help with the plugin?</a>
+  </div>
+</body>
+
+</html>
+<script src="../script/popups/login.js"></script>

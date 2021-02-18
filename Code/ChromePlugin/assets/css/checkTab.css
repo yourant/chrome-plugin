@@ -1,0 +1,165 @@
+#spiderPopBg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2147483648;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  display: none;
+}
+.spiderPopTab {
+  width: 500px;
+  min-height: 250px;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  margin-left: -250px;
+  background: #fff;
+  box-shadow: 0 1px 5px #434040;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 100003;
+  display: none;
+  padding-bottom: 60px;
+}
+
+.spiderPopTab .titles {
+  line-height: 30px;
+  padding-left: 20px;
+  margin: 0;
+  font-size: 16px;
+  background: #434343;
+  color: #fff;
+  border-radius: 5px;
+}
+.spiderPopTab .radioForm{
+  padding: 20px;
+  line-height: 30px;
+  font-size: 16px;
+}
+.spiderPopTab .radioForm input[type="radio"]{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  appearance: auto !important;
+}
+.spiderPopTab .radioForm label{
+  font-size: 16px;
+  margin: 0 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#productIdInput{
+  width: 300px;
+  height: 24px;
+  border: 1px solid #666 !important;
+}
+.spiderPopTab #selectAll{
+  width: 80px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #6d9eeb;
+  color: #fff;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+}
+#selectAll:hover{
+  background-color: #6093e5;
+}
+.spiderPopTab .btnTab{
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 120px;
+  margin: 0;
+  text-align: center;
+}
+.spiderPopTab #bg{
+  height: 50px;
+  width: 100%;
+  background: #ccc;
+  opacity: 0.3;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  display: none;
+}
+
+.spiderPopTab .btnTab .btn {
+  position: relative !important;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #584744;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0;
+  margin: 5px;
+}
+
+.spiderPopTab .btnTab .btn.spider-sure {
+  background: #3d85c6;
+  color: #fff;
+  border-color: #3d85c6;
+  float: left;
+}
+
+.spiderPopTab .btnTab .btn.spider-cancel {
+  background: #fff;
+  color: #434040;
+  float: right;
+}
+
+.sfc-attribute {
+  padding: 20px 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.sfc-attribute li {
+  line-height: 24px;
+  font-size: 14px;
+  color: #434040;
+}
+
+.sfc-attribute li input.sfc-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 4px;
+  float: left;
+}
+
+.sfc-attribute li .sfc-key {
+  width: 120px;
+  float: left;
+  margin-right: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sfc-attribute li .sfc-value {
+  width: calc(100% - 160px);
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.clearfix {
+  overflow:hidden;
+  _zoom:1;
+}
